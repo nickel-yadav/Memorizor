@@ -1,7 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
-import postRoute from './routes/posts.js';
+import postRoutes from './routes/posts.js';
 import dotenv from 'dotenv';
 
 const app = express();
@@ -11,7 +11,7 @@ app.use(express.urlencoded({limit: "30mb", extended: true}));
 app.use(express.json({limit: "30mb", extended: true}));
 app.use(cors());
 
-app.use('/posts', postRoute);
+app.use('/posts', postRoutes);
 
 app.get('/', (req, res) => {
     res.send('Memorizor API running');
